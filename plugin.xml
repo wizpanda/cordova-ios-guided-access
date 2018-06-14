@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.wizpanda.cordova.guided-access" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>cordova-ios-guided-access</name>
+    <js-module name="cordova-ios-guided-access" src="www/cordova-ios-guided-access.js">
+        <clobbers target="cordova.plugins.cordova-ios-guided-access"/>
+    </js-module>
+</plugin>
