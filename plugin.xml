@@ -5,4 +5,12 @@
     <js-module name="cordova-ios-guided-access" src="www/cordova-ios-guided-access.js">
         <clobbers target="cordova.plugins.cordova-ios-guided-access"/>
     </js-module>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="cordova-ios-guided-access">
+                <param name="ios-package" value="cordova-ios-guided-access"/>
+            </feature>
+        </config-file>
+        <source-file src="src/ios/cordova-ios-guided-access.m"/>
+    </platform>
 </plugin>
