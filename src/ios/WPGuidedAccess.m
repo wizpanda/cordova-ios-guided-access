@@ -7,8 +7,11 @@
     BOOL enable = true;
 
     UIAccessibilityRequestGuidedAccessSession(enable, ^(BOOL didSucceed) {
-        NSLog(@"Guided Access Started");
-        NSLog(didSucceed ? @"Yes" : @"No");
+        NSLog(@"Guided Access start succeeded: %s", didSucceed ? "YES" : "NO");
+
+        CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:didSucceed];
+
+        [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
     });
 }
 
@@ -16,16 +19,19 @@
     BOOL enable = false;
 
     UIAccessibilityRequestGuidedAccessSession(enable, ^(BOOL didSucceed) {
-        NSLog(@"Guided Access Stopped");
-        NSLog(didSucceed ? @"Yes" : @"No");
+        NSLog(@"Guided Access end succeeded: %s", didSucceed ? "YES" : "NO");
+
+        CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:didSucceed];
+
+        [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
     });
 }
 
 - (void)isEnabled:(CDVInvokedUrlCommand*)command {
     BOOL guidedAccessEnabled = UIAccessibilityIsGuidedAccessEnabled();
-    
+
     CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:guidedAccessEnabled];
-    
+
     [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 

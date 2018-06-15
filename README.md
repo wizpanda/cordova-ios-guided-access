@@ -1,6 +1,11 @@
 # Cordova Guided Access Mode for iOS
 
-## Usage
+## iOS Usage
+
+To start Guided Access mode programmatically via this plugin, the device must be supervised using Mobile Device
+Management (MDM), and the app itself must be enabled for this mode by MDM.
+
+## Javascript Usage
 
 ```
 cordova.plugins.WPGuidedAccess.start();
