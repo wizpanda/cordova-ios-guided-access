@@ -3,14 +3,15 @@
         xmlns:android="http://schemas.android.com/apk/res/android">
     <name>cordova-ios-guided-access</name>
     <js-module name="cordova-ios-guided-access" src="www/cordova-ios-guided-access.js">
-        <clobbers target="cordova.plugins.cordova-ios-guided-access"/>
+        <clobbers target="cordova.plugins.WPGuidedAccess"/>
     </js-module>
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
-            <feature name="cordova-ios-guided-access">
-                <param name="ios-package" value="cordova-ios-guided-access"/>
+            <feature name="WPGuidedAccessMode">
+                <param name="ios-package" value="WPGuidedAccessMode"/>
             </feature>
         </config-file>
-        <source-file src="src/ios/cordova-ios-guided-access.m"/>
+        <header-file src="src/ios/WPGuidedAccess.h"/>
+        <source-file src="src/ios/WPGuidedAccess.m"/>
     </platform>
 </plugin>
