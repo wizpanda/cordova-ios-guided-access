@@ -3,23 +3,25 @@
     "version": "0.0.1",
     "description": "Invoke Guided Access",
     "cordova": {
-        "id": "call-number",
+        "id": "guided-access",
         "platforms": [
             "ios"
         ]
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Rohfosho/CordovaCallNumberPlugin.git"
+        "url": "git@github.com:wizpanda/cordova-ios-guided-access.git"
     },
     "keywords": [
         "cordova",
-        "cordova-ios"
+        "cordova-ios",
+        "guided-access",
+        "single-app-mode"
     ],
-    "author": "",
+    "author": "Shashank Agrawal",
     "license": "Apache 2.0",
     "bugs": {
-        "url": "https://github.com/Rohfosho/CordovaCallNumberPlugin/issues"
+        "url": "https://github.com/wizpanda/cordova-ios-guided-access/issues"
     },
-    "homepage": "https://github.com/Rohfosho/CordovaCallNumberPlugin#readme"
+    "homepage": "https://github.com/wizpanda/cordova-ios-guided-access"
 }
