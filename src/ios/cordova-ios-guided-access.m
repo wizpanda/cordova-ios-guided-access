@@ -2,27 +2,22 @@
 
 #import <Cordova/CDV.h>
 
-@interface cordova-ios-guided-access : CDVPlugin {
+@interface WPGuidedAccessMode : CDVPlugin {
   // Member variables go here.
 }
 
-- (void)coolMethod:(CDVInvokedUrlCommand*)command;
+- (void)start:(CDVInvokedUrlCommand*)command;
 @end
 
-@implementation cordova-ios-guided-access
+@implementation WPGuidedAccessMode
 
-- (void)coolMethod:(CDVInvokedUrlCommand*)command
-{
-    CDVPluginResult* pluginResult = nil;
-    NSString* echo = [command.arguments objectAtIndex:0];
+- (void)start:(CDVInvokedUrlCommand*)command {
+    BOOL enableFoo = true;
 
-    if (echo != nil && [echo length] > 0) {
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:echo];
-    } else {
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
-    }
-
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    UIAccessibilityRequestGuidedAccessSession(enableFoo completion:^(BOOL didSucceed) {
+        NSLog(@"Animation over..");
+        NSLog(didSucceed ? @"Yes" : @"No");
+    });
 }
 
 @end
